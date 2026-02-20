@@ -28,11 +28,12 @@ import java.util.Scanner;
 
 public class Carta {
 
+    //att de la clase
     private char palo;
     private int numero;
     private static Scanner sc = new Scanner(System.in);
 
-
+    //constructores
     public Carta(){
 
     }
@@ -42,7 +43,8 @@ public class Carta {
         this.palo = palo;
     }
 
-public void setNumero() {
+    //numero de la carta con regex
+    public void setNumero() {
         String entrada;
         String patron = "^([1-9]|1[0-3])$";
         do {
@@ -54,9 +56,8 @@ public void setNumero() {
         } while (!entrada.matches(patron));
         this.numero = Integer.parseInt(entrada);
     }
-
-    
-
+ 
+    //set palo con regex
     public void setPalo () {
         String palo;
         do {
@@ -70,6 +71,7 @@ public void setNumero() {
         this.palo = palo.charAt(0);
     }
 
+    //imprime la carta con el nombre completo
     public String imprimirCarta () {
        
         String imprimirCarta = "";
@@ -110,6 +112,7 @@ public void setNumero() {
         return imprimirCarta;
     }
 
+    //comprueba que carta gana
     public void comprobarCarta(Carta carta) {
         System.out.print("La carta ");
         System.out.println(this.imprimirCarta());
@@ -132,6 +135,7 @@ public void setNumero() {
         System.out.println(carta.imprimirCarta());
     }
 
+    //main para comprobar el funcionamento de los metodos
     public static void main (String[]args) {
         Carta c1 = new Carta(1,'C');
         Carta c2 = new Carta(1,'P');

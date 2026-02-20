@@ -7,17 +7,19 @@ package coche;
 
 public class Coche {
 
+    //att de la clase
     private String modelo;
     private String marca;
     private int anyo;
     
-
+    //constructores
     public Coche (String modelo, String marca, int anyo) {
         this.modelo = modelo;
         this.marca = marca;
         this.anyo = anyo;
     }
 
+    //imprime los atributos del objeto
     public void imprimirCoche () {
         System.out.println("Modelo: " + modelo);
         System.out.println("Marca: " + marca);
@@ -28,6 +30,7 @@ public class Coche {
         return marca;
     }
 
+    //busca una marca en el array
     public static void buscarCoche (Coche[] arrayCoches, String marcaBuscar) {
 
         boolean encontrado = false;
@@ -42,6 +45,7 @@ public class Coche {
         }
     }
 
+    //main para comprobar la implementación
     public static void main (String[]args) {
 
         Coche[] arrayCoches = new Coche[5];

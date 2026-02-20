@@ -1,10 +1,13 @@
 package motocicleta;
 
 public class Motocicleta {
+
+    //att de la clase
     private int cv = 0;
     private int kmH = 0;
     private String matricula = "";
 
+    //constructores
     public Motocicleta () {}
 
     public Motocicleta (int cv, int kmH, String matricula) {
@@ -13,6 +16,7 @@ public class Motocicleta {
         this.matricula = matricula;
     }
 
+    //getters setters y toString
     public int getCv () {
         return this.cv;
     }
@@ -41,6 +45,7 @@ public class Motocicleta {
         return "Cv: " + cv + "\nKm/h: " + kmH + "\nmatricula: " + matricula;
     }
 
+    //implementacion
     public static void main (String[]args) {
 
         Motocicleta m1 = new Motocicleta();

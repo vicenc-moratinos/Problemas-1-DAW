@@ -37,21 +37,21 @@ public class Modulo {
                 + "\nprofe: " + profe  
                 + "\n";
 
-        for (int i = 0; i<arrayAlumnos.length; i++) {
+        for (int i = 0; i < arrayAlumnos.length; i++) {
             if (arrayAlumnos[i] != null) {
                 informeFinal += "\nalumno " + i + ": \n" + arrayAlumnos[i].toString() + "\nNota final: " + arrayAlumnos[i].calcularCalificacionFinal() + "\n";
             }
         }
-        
-
         return informeFinal;
     }
 
+    //metodo par acalcular la media del trimestre de todos los alumnos
     public int calcularMediaTrimestre (int trimestre) {
         int media = 0;
         int contador = 0;
         boolean trimestreCompletado = true;
     
+        //se tienen en cuenta los alumnos sin las notas puestas
         for (int i = 0; i < arrayAlumnos.length; i++) {
             if (arrayAlumnos[i] != null || arrayAlumnos[i].notas[trimestre] != -1) {
                 media += arrayAlumnos[i].notas[trimestre];
