@@ -21,6 +21,10 @@ public class Libro {
         this.precio = -1;
     }
 
+    public String getTitulo(){
+        return this.titulo;
+    }
+
     //constructor con todos los parametros
     public Libro (String titulo, String autor, int isbn, String editorial, double precio) {
         this.titulo = titulo;
@@ -54,7 +58,7 @@ public class Libro {
 
         //bucle que ordena por precio con una variable auxiliar, si el libro siguiente es mas caro cambia la posición
         for (int i= 0; i<arrayLibros.length; i++) {
-            for (int j = 0; j < arrayLibros.length -1; j++){
+            for (int j = 0; j < arrayLibros.length -1 -i; j++){
                 if(arrayLibros[j].precio > arrayLibros[j +1].precio) {
                     Libro aux = arrayLibros[j];
                     arrayLibros[j] = arrayLibros[j +1];
@@ -63,5 +67,9 @@ public class Libro {
 
             }
         }
+
+        for (int i = 0; i < arrayLibros.length; i++) {
+            arrayLibros[i].imprimirLibro();
+            }
     }
 }

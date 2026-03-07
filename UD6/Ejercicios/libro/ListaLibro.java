@@ -14,6 +14,7 @@ public class ListaLibro {
 
     //atributos de la clase
     private Libro[] arrayLibro;
+    int cantLibros = 0;
 
     //constructor vacio
     public ListaLibro() {
@@ -21,8 +22,15 @@ public class ListaLibro {
     }
 
     //añade un libro al array
-    public void addLibro(Libro libro, int index) {
-        arrayLibro[index] = libro;
+    public void addLibro(Libro libro) {
+
+        if (cantLibros < 3) {
+            arrayLibro[cantLibros] = libro;
+            cantLibros++;
+        }
+        else {
+            System.out.println("Demasiados libros ya listillo");
+        }
     }
 
     //imprime todos los libros
@@ -32,6 +40,15 @@ public class ListaLibro {
         }
     }
 
+    public int buscarLibro (String tituloLib) {
+        int pos = -1;
+        for (int i = 0; i < this.arrayLibro.length; i++){
+            if(arrayLibro[i].getTitulo().toLowerCase().contains(tituloLib.toLowerCase())){
+                pos = i;
+            }
+        }
+        return pos;
+    }
     //ordena el array alfabeticamente con compare to, el cual devuelve 0 -1 o +1 dependiendo de la comparacion alfabetica
     //si el numero de inicial es mayor que el siguiente se intercambia la posicion
     public void ordenarArrayLibros() {
@@ -61,5 +78,7 @@ public class ListaLibro {
         //ordenar e imprimir
         arrayLibros.ordenarArrayLibros();
         arrayLibros.imprimirArrayLibros();
+        System.out.println("posicion del libro buscado -> \"cien\"" +  arrayLibros.buscarLibro("El p"));
+
     }
 }
