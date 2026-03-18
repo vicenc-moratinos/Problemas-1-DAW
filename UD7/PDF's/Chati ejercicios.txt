@@ -1,0 +1,457 @@
+Ejercicios de nivel más avanzado
+1. Sistema de empleados con comisiones y bonus dinámicos
+
+Amplía el ejercicio de Empleado.
+
+Requisitos
+
+Clase abstracta Empleado
+
+atributos: nombre, salarioBase
+
+método abstracto calcularSueldo()
+
+Subclases:
+
+EmpleadoFijo
+
+EmpleadoPorHoras
+
+EmpleadoComercial
+
+Reglas:
+
+EmpleadoPorHoras tiene horasTrabajadas y pagoPorHora
+
+EmpleadoComercial tiene ventas y porcentajeComision
+
+El sueldo depende del tipo de empleado.
+
+Crear un ArrayList de empleados y calcular:
+
+sueldo total pagado por la empresa
+
+empleado que más cobra
+
+sueldo medio
+
+👉 Conceptos nuevos:
+
+ArrayList
+
+polimorfismo real
+
+recorrer colecciones
+
+2. Sistema de figuras con cálculo automático
+
+Mejora el ejercicio de Figuras geométricas.
+
+Clase abstracta
+
+Figura
+
+Métodos abstractos:
+
+calcularArea()
+
+calcularPerimetro()
+
+Subclases
+
+Rectangulo
+
+Triangulo
+
+Circulo
+
+Pentagono
+
+Programa
+
+Guardar todas las figuras en un ArrayList<Figura>
+
+Mostrar:
+
+área de cada figura
+
+perímetro
+
+Calcular:
+
+figura con mayor área
+
+suma total de áreas
+
+👉 Dificultad añadida:
+trabajar con polimorfismo en colecciones.
+
+3. Sistema de biblioteca realista
+
+Versión más compleja del ejercicio de biblioteca.
+
+Clases
+
+Publicacion (abstracta)
+
+Atributos:
+
+titulo
+
+año
+
+id
+
+Subclases:
+
+Libro
+
+Revista
+
+Comic
+
+DVD
+
+Interfaces
+
+Prestable
+
+Métodos:
+
+prestar()
+
+devolver()
+
+estaPrestado()
+
+Reglas
+
+Solo algunos materiales son prestables.
+
+Controlar que:
+
+no se pueda prestar si ya está prestado
+
+no se pueda devolver si no está prestado
+
+Programa
+
+Menú:
+
+1 añadir publicación
+2 prestar
+3 devolver
+4 mostrar catálogo
+5 mostrar prestados
+6 salir
+
+👉 Conceptos nuevos:
+
+instanceof
+
+colecciones
+
+control de errores
+
+4. Sistema de vehículos con mantenimiento automático
+
+Amplía el ejercicio de vehículos.
+
+Clase abstracta
+
+Vehiculo
+
+Atributos:
+
+marca
+
+kmTotales
+
+Métodos:
+
+recorrer(km)
+
+calcularMantenimiento()
+
+Subclases
+
+Coche
+
+Moto
+
+Camion
+
+Reglas
+
+Coche → mantenimiento cada 15000 km
+
+Moto → cada 8000 km
+
+Camión → cada 20000 km
+
+El método calcularMantenimiento() debe decir:
+
+Faltan 3200 km para la revisión
+5. Juego de combate (POO avanzada)
+
+Muy buen ejercicio para practicar herencia.
+
+Clase abstracta
+
+Personaje
+
+Atributos:
+
+nombre
+
+vida
+
+ataque
+
+Métodos:
+
+atacar(Personaje enemigo)
+
+recibirDaño(int daño)
+
+Subclases
+
+Guerrero
+
+Mago
+
+Arquero
+
+Cada uno tiene habilidades distintas.
+
+Ejemplo:
+
+Guerrero → ataque fuerte
+Mago → puede lanzar hechizo
+Arquero → ataque crítico
+Programa
+
+Simular combate entre personajes hasta que uno muera.
+
+6. Sistema de pedidos (nivel DAW real)
+
+Muy útil para backend.
+
+Clases
+
+Producto
+
+id
+
+nombre
+
+precio
+
+Pedido
+
+lista de productos
+
+calcularTotal()
+
+Cliente
+
+nombre
+
+historialPedidos
+
+Funciones
+
+añadir productos al pedido
+
+calcular total
+
+mostrar pedido
+
+👉 Conceptos nuevos:
+
+ArrayList
+
+composición de objetos
+
+
+Proyecto: Sistema de gestión de tienda online
+Objetivo
+
+Crear una aplicación en Java que permita gestionar una tienda online con:
+
+clientes
+
+productos
+
+pedidos
+
+pagos
+
+stock
+
+Debe usar herencia, interfaces, polimorfismo, colecciones y excepciones.
+
+1. Estructura de clases
+Clase abstracta: Usuario
+
+Atributos:
+
+id
+nombre
+email
+
+Métodos:
+
+mostrarInfo()
+Clase Cliente (hereda de Usuario)
+
+Atributos:
+
+direccion
+ArrayList<Pedido> pedidos
+
+Métodos:
+
+crearPedido()
+verPedidos()
+Clase Administrador (hereda de Usuario)
+
+Métodos:
+
+añadirProducto()
+eliminarProducto()
+verInventario()
+2. Productos
+Clase Producto
+
+Atributos:
+
+id
+nombre
+precio
+stock
+
+Métodos:
+
+reducirStock()
+aumentarStock()
+mostrarProducto()
+Tipos de producto (herencia)
+
+Subclases:
+
+ProductoDigital
+ProductoFisico
+
+Producto físico:
+
+peso
+costeEnvio
+
+Producto digital:
+
+tamanoArchivo
+3. Pedido
+
+Clase Pedido
+
+Atributos:
+
+id
+Cliente cliente
+ArrayList<Producto> productos
+estado
+total
+
+Estados posibles:
+
+CREADO
+PAGADO
+ENVIADO
+ENTREGADO
+
+Métodos:
+
+añadirProducto()
+calcularTotal()
+mostrarPedido()
+4. Sistema de pago (interfaces)
+
+Crear interfaz:
+
+MetodoPago
+
+Métodos:
+
+pagar(double cantidad)
+Implementaciones
+PagoTarjeta
+PagoPaypal
+PagoTransferencia
+
+Cada una muestra algo como:
+
+Pago realizado con tarjeta
+5. Gestión de inventario
+
+Clase Inventario
+
+Atributo:
+
+ArrayList<Producto> productos
+
+Métodos:
+
+buscarProducto()
+añadirProducto()
+eliminarProducto()
+mostrarInventario()
+6. Menú principal
+
+Programa principal con menú:
+
+1 Añadir producto
+2 Mostrar productos
+3 Crear cliente
+4 Crear pedido
+5 Añadir producto a pedido
+6 Pagar pedido
+7 Mostrar pedidos
+8 Mostrar clientes
+9 Salir
+7. Reglas importantes
+
+Debes controlar:
+
+Excepciones
+
+comprar producto sin stock
+
+pagar pedido vacío
+
+producto inexistente
+
+8. Conceptos que practicarás
+
+Este proyecto usa:
+
+✔ herencia
+✔ clases abstractas
+✔ interfaces
+✔ polimorfismo
+✔ ArrayList
+✔ relaciones entre objetos
+✔ excepciones
+✔ menú interactivo
+
+Es muy parecido a proyectos reales de DAW.
+
+💡 Si quieres, puedo también darte:
+
+la estructura completa de carpetas como si fuera un proyecto real
+
+el diagrama UML
+
+la versión aún más avanzada (nivel proyecto final DAW)
+
+o un proyecto aún más difícil tipo videojuego RPG en Java (muy bueno para practicar POO).
