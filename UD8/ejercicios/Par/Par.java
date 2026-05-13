@@ -35,7 +35,9 @@ public class Par implements Comparable{
     @Override
     public boolean equals(Object obj){
         boolean iguales = false;
-        if (this.getClave().equals(((Par) obj).getClave()) && this.getValor() == ((Par) obj).getValor())            iguales = true;
+        if (this.getClave().equals(((Par) obj).getClave()) 
+        && this.getValor() == ((Par) obj).getValor())
+            iguales = true;
         return iguales;
     }
 

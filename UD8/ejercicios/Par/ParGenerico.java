@@ -1,11 +1,11 @@
 
 //se declara como tipos genericos para la clase
-public class ParGenerico <T,H> {
-    private T clave;
-    private H valor;
+public class ParGenerico <K,V> {
+    private K clave; //K es de Key (unique id)
+    private V valor; //V de Value
 
     //se substituyen en el constructor los tipos de los parametros
-    public ParGenerico(T clave, H valor)  {
+    public ParGenerico(K clave, V valor)  {
         this.clave = clave;
         this.valor = valor;
     }
@@ -14,6 +14,8 @@ public class ParGenerico <T,H> {
         
         //Para instanciar hay que 
         ParGenerico <String,Integer> pg1 = new ParGenerico<>("holaa", 12);
+        System.out.println(pg1);
+
     }
 
 }
